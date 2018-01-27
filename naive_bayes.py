@@ -74,7 +74,7 @@ def get_p_word_given_label(data_dir):
 
 def main():
     data_dir = DEFAULT_DATA_DIR
-    if len(sys.argv) < 2:
+    if len(sys.argv) >= 2:
         print("Usage: python {!s} /path/to/data".format(os.path.basename(__file__)))
         data_dir = sys.argv[1]
 
@@ -107,9 +107,9 @@ def main():
         log_ham = log_prod_ham + math.log(p_ham)
 
         if log_ham > log_spam:
-            print(file + " ham")
+            print("{!s} ham".format(file))
         else:
-            print(file + " spam")
+            print("{!s} spam".format(file))
 
 
 if __name__ == '__main__':
