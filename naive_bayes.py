@@ -77,6 +77,8 @@ def main():
     if len(sys.argv) >= 2:
         print("Usage: python {!s} /path/to/data".format(os.path.basename(__file__)))
         data_dir = sys.argv[1]
+        if data_dir[-1] != '/':
+            data_dir = data_dir + '/'
 
     spam_dir = data_dir + SPAM_PATH
     ham_dir = data_dir + HAM_PATH
