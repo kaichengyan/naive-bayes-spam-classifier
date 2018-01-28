@@ -108,7 +108,7 @@ def main():
         log_spam = log_prod_spam + math.log(p_spam)
         log_ham = log_prod_ham + math.log(p_ham)
 
-        if log_ham > log_spam:
+        if log_ham >= log_spam:
             print("{!s} ham".format(file))
         else:
             print("{!s} spam".format(file))
