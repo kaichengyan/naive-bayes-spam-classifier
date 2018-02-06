@@ -75,7 +75,6 @@ def get_p_word_given_label(data_dir):
 def main():
     data_dir = DEFAULT_DATA_DIR
     if len(sys.argv) >= 2:
-        print("Usage: python {!s} /path/to/data".format(os.path.basename(__file__)))
         data_dir = sys.argv[1]
         if data_dir[-1] != '/':
             data_dir = data_dir + '/'
@@ -93,7 +92,7 @@ def main():
     p_ham = ham_sample_count / total_sample_count
 
     test_files = os.listdir(test_dir)
-    test_files.sort(key=lambda f: int(''.join(filter(str.isdigit, f))))
+    test_files.sort(key=lambda f: int(''.join(filter(str.isdigit, f))))  # sort the files
 
     for file in test_files:
         log_prod_spam = 0
